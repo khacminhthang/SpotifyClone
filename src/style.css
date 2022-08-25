@@ -1,0 +1,126 @@
+/* body */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* main */
+.main {
+    display: grid;
+    grid-template-areas:
+        "top-bar top-bar"
+        "nav-bar main-view"
+        "now-playing-bar now-playing-bar";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr auto;
+    height: 100%;
+    min-height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+/* Navigation */
+.nav-bar {
+    background-color: #000;
+    width: 302px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 3;
+    min-height: 0;
+    height: calc(100vh - 90px);
+    margin: 0;
+    grid-area: nav-bar;
+    color: #fff;
+}
+
+.logo {
+    padding-top: 24px;
+    height: 40px;
+    max-width: 131px;
+    width: 100%;
+    margin-bottom: 18px;
+    padding-left: 24px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: #b3b3b3;
+    padding: 10px 16px 10px 24px;
+    font-weight: 700;
+    font-family: var(
+        --font-family,
+        CircularSp,
+        CircularSp-Arab,
+        CircularSp-Hebr,
+        CircularSp-Cyrl,
+        CircularSp-Grek,
+        CircularSp-Deva,
+        var(--fallback-fonts, sans-serif)
+    );
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-item:active {
+    color: #fff;
+}
+
+.nav-item-text {
+    padding-left: 16px;
+}
+
+/* top-bar */
+.top-bar {
+    grid-area: main-view;
+    height: 64px;
+    min-width: 0;
+    pointer-events: none;
+    z-index: 2;
+    background-color: blue;
+    position: sticky;
+    top: 0;
+}
+
+/* main-view */
+.main-view {
+    background-color: white;
+    flex-direction: column;
+    grid-area: main-view;
+    min-height: 0;
+    position: relative;
+    width: 100%;
+    overflow-y: auto;
+}
+
+/* playing-bar */
+.now-playing-bar {
+    background-color: green;
+    grid-area: now-playing-bar;
+    width: 100%;
+    z-index: 4;
+    height: 90px;
+    position: sticky;
+    bottom: 0;
+}
+
+/* Common */
+.fs-24 {
+    font-size: 24px !important;
+}
+
+.fs-20 {
+    font-size: 20px !important;
+}
+
+.fs-18 {
+    font-size: 18px !important;
+}
+.fs-16 {
+    font-size: 16px !important;
+}
+.fs-14 {
+    font-size: 14px !important;
+}
